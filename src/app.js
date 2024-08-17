@@ -1,7 +1,9 @@
 import express from "express"
 import "dotenv/config"
+import { connectDb } from "./db/config.js";
 
 const app = express();
-console.log(process.env.PORT);
 
-app.listen(process.env.PORT,console.log(`Server Started on Port: ${process.env.PORT}`))
+app.listen(process.env.PORT,console.log(`Server Started on Port: ${process.env.PORT}`));
+
+connectDb();
